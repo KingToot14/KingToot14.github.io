@@ -1,6 +1,5 @@
 window.onload = function() {
     fadeOut();
-    randomizeHelloMessage();
 };
 
 window.addEventListener('pageshow', function (event) {
