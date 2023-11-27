@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Gallery</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../styles/styles.css">
+        <link rel="icon" type="image/x-icon/" href="../favicon.ico">
+        <script src="../scripts/script.js"></script>
+        <base target="_blank">
+    </head>
+    <body>
+        <div class="header_background"></div>
+        <header>
+            <img src="../images/header_image_left.png" alt="Header Detail Left" style="width: 228px; height: 80px; float: left;" class="pixel">
+        </header>
+        <header>
+            <img src="../images/header_image_right.png" alt="Header Detail Right" style="width: 276px; height: 80px; float: right;" class="pixel">
+        </header>
+        <header>
+            <img src="../images/king_toot_logo.png" alt="Logo" class="logo pixel">
+        </header>
+        <nav>
+            <ul class="navigation_list">
+                <li><a class="not_current" href="../index.html" target="_self">Home</a></li>
+                <li><a class="current">Gallery</a></li>
+                <li><a class="not_current" href="games.html" target="_self">Games</a></li>
+                <li><a class="not_current" href="links.html" target="_self">Links</a></li>
+                <li class="back_button">
+                    <button onclick="scrollToTop()">Back To Top</button>
+                </li>
+            </ul>
+        </nav>
+        <div id="transition"></div>
+        <div class="body">
+            <h1>Gallery</h1>
+            <button onclick='setGallery("images")'>Images</button>
+            <button onclick='setGallery("favorite_tweets")'>Favorite Tweets</button>
+        </div>
+        <div class="body" id="images">
+            <h2>Images</h2>
+            <div class="img_grid">
+                <div class="raise">
+                    <img src="../images/image_grid/cloud.png" alt="Cloud" class="pixel" style="width: 320px; height: 320px;">
+                    <span>Cloud</span>
+                </div>
+                <div class="raise">
+                    <img src="../images/image_grid/cloud.png" alt="Cloud" class="pixel" style="width: 320px; height: 320px;">
+                    <span>Cloud</span>
+                </div>
+                <div class="raise">
+                    <img src="../images/image_grid/cloud.png" alt="Cloud" class="pixel" style="width: 320px; height: 320px;">
+                    <span>Cloud</span>
+                </div>
+                <div class="raise">
+                    <img src="../images/image_grid/cloud.png" alt="Cloud" class="pixel" style="width: 320px; height: 320px;">
+                    <span>Cloud</span>
+                </div>
+                <div class="raise">
+                    <img src="../images/image_grid/cloud.png" alt="Cloud" class="pixel" style="width: 320px; height: 320px;">
+                    <span>Cloud</span>
+                </div>
+                <div class="raise">
+                    <img src="../images/image_grid/cloud.png" alt="Cloud" class="pixel" style="width: 320px; height: 320px;">
+                    <span>Cloud</span>
+                </div>
+                <div class="raise">
+                    <img src="../images/image_grid/cloud.png" alt="Cloud" class="pixel" style="width: 320px; height: 320px;">
+                    <span>Cloud</span>
+                </div>
+                <div class="raise">
+                    <img src="../images/image_grid/cloud.png" alt="Cloud" class="pixel" style="width: 320px; height: 320px;">
+                    <span>Cloud</span>
+                </div>
+                <div class="raise">
+                    <img src="../images/image_grid/cloud.png" alt="Cloud" class="pixel" style="width: 320px; height: 320px;">
+                    <span>Cloud</span>
+                </div>
+                <div class="raise">
+                    <img src="../images/image_grid/cloud.png" alt="Cloud" class="pixel" style="width: 320px; height: 320px;">
+                    <span>Cloud</span>
+                </div>
+                <div class="raise">
+                    <img src="../images/image_grid/cloud.png" alt="Cloud" class="pixel" style="width: 320px; height: 320px;">
+                    <span>Cloud</span>
+                </div>
+            </div>
+        </div>
+        <div class="body grid" id="favorite_tweets" style="display: none;">
+            <h2>Favorite Tweets</h2>
+            <div class="twt_grid">
+            <!-- Tweet Iframes -->
+            <iframe class="tweet" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="width: 550px; height: 800px;" title="Twitter Tweet" src="https://platform.twitter.com/embed/Tweet.html?dnt=false&amp;embedId=twitter-widget-0&amp;features=e30%3D&amp;frame=false&amp;hideCard=false&amp;hideThread=false&amp;id=1722851005044293759&amp;lang=en&amp;origin=file%3A%2F%2F%2FC%3A%2FUsers%2Farmor%2FOneDrive%2520-%2520iup.edu%2F2023-Fall%2520(Current)%2FFundamentals%2520of%2520CS%2FWebsite%2520Assignment%2Fhtml%2Fcontact.html&amp;theme=dark&amp;widgetsVersion=01917f4d1d4cb%3A1696883169554&amp;width=550px" data-tweet-id="1722851005044293759"></iframe>
+            <iframe class="tweet" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="width: 550px; height: 800px;" title="Twitter Tweet" src="https://platform.twitter.com/embed/Tweet.html?dnt=false&amp;embedId=twitter-widget-0&amp;features=e30%3D&amp;frame=false&amp;hideCard=false&amp;hideThread=false&amp;id=1722461747104088114&amp;lang=en&amp;origin=file%3A%2F%2F%2FC%3A%2FUsers%2Farmor%2FOneDrive%2520-%2520iup.edu%2F2023-Fall%2520(Current)%2FFundamentals%2520of%2520CS%2FWebsite%2520Assignment%2Fhtml%2Fcontact.html&amp;theme=dark&amp;widgetsVersion=01917f4d1d4cb%3A1696883169554&amp;width=550px" data-tweet-id="1722461747104088114"></iframe>
+            <iframe class="tweet" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="width: 550px; height: 800px;" title="Twitter Tweet" src="https://platform.twitter.com/embed/Tweet.html?dnt=false&amp;embedId=twitter-widget-0&amp;features=e30%3D&amp;frame=false&amp;hideCard=false&amp;hideThread=false&amp;id=1706882016552112345&amp;lang=en&amp;origin=file%3A%2F%2F%2FC%3A%2FUsers%2Farmor%2FOneDrive%2520-%2520iup.edu%2F2023-Fall%2520(Current)%2FFundamentals%2520of%2520CS%2FWebsite%2520Assignment%2Fhtml%2Fcontact.html&amp;theme=dark&amp;widgetsVersion=01917f4d1d4cb%3A1696883169554&amp;width=550px" data-tweet-id="1706882016552112345"></iframe>
+            <iframe class="tweet" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="width: 550px; height: 800px;" title="Twitter Tweet" src="https://platform.twitter.com/embed/Tweet.html?dnt=false&amp;embedId=twitter-widget-0&amp;features=e30%3D&amp;frame=false&amp;hideCard=false&amp;hideThread=false&amp;id=1702877840750879185&amp;lang=en&amp;origin=file%3A%2F%2F%2FC%3A%2FUsers%2Farmor%2FOneDrive%2520-%2520iup.edu%2F2023-Fall%2520(Current)%2FFundamentals%2520of%2520CS%2FWebsite%2520Assignment%2Fhtml%2Fcontact.html&amp;theme=dark&amp;widgetsVersion=01917f4d1d4cb%3A1696883169554&amp;width=550px" data-tweet-id="1702877840750879185"></iframe>
+            <!-- Tweet Iframes -->
+            </div>
+        </div>
+        <div class="body", style="height: 50px"></div>
+        <footer></footer>
+    </body>
+</html>
