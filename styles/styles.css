@@ -15,6 +15,8 @@ body {
     font-family: "Simple Pixel";
     margin: 0px;
     word-spacing: 4px;
+
+    
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -303,40 +305,4 @@ img.tall {
     gap: 10px;
     grid-auto-rows: auto;
     justify-content: center;
-}
-
-/* Static Nav Screen */
-.page {
-    position: fixed;
-    top: 0px;
-    bottom: 0px;
-    left: 0;
-    right: 0;
-
-    width: 100%;
-    height: 100%;
-    overflow: visible;
-
-    border: none;
-}
-
-.nav_active {
-    background-color: #41115c;
-}
-
-.nav_active:hover {
-    color: #cdabd9;
-    background-color: #41115c;
-}
-
-.nav_inactive:hover {
-    background-color: #5c1c78;
-}
-
-.body_2 {
-    position: relative;
-    margin: 10px;
-    height: auto;
-    font-size: 20px;
-    text-align: center;
 }

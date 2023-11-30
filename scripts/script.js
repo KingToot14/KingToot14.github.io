@@ -38,14 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-window.addEventListener('pageshow', function (event) {
-    if (!event.persisted) {
-        return;
-    }
-    var transition = document.getElementById('transition');
-    transition.classList.remove('fade_in');
-    });
-
 function fadeOut() { 
     if (!window.AnimationEvent) return;
     document.getElementById("transition").classList.add("fade_out");
@@ -72,24 +64,34 @@ function setGamePage(section) {
     setVisibility(section, ["previous_work", "current_plans"]);
 }
 
-prev_message = "";
 
-function randomizeHelloMessage() {
-    messages = ["Hello!", "Hello :3", "Haiii", "Yooooo!"];
-    messages.splice(messages.indexOf(prev_message), 1);
-    prev_message = messages[Math.floor(Math.random() * messages.length)];
-    document.getElementById("hello_text").textContent = prev_message;
+// My boyfriend worked on this bit
+messages = ["Hello!", "Hello :3", "Haiii", "Yooooo!", ":P", ":3", ":]"];        // Specifically this
+sillyMessages = ["Meowww :P :3 >_<"]                                            // ...and this
+prevIndex = 0;
+
+sillyMode = false;
+sillyModeString = "silly";
+currInput = "";
+
+document.addEventListener('keypress', function(event) {
+    if (sillyMode) return;
+    
+    if (event.key == sillyModeString[currInput.length]) currInput += event.key;
+    else currInput = "";
+
+    if (currInput.length == 5) activateSillyMode();
+});
+
+function activateSillyMode() {
+    sillyMode = true;
+    messages = messages.concat(sillyMessages);
 }
 
-// Static Navigation Bar
-function setDisplayPage(page) {
-    setVisibility("page_" + page, ["page_home", "page_gallery", "page_games", "page_links"])
+function randomizeHelloMessage() {
+    index = Math.floor(Math.random() * (messages.length - 1));
+    if (index >= prevIndex) index += 1;
+    prevIndex = index;
 
-    ids = ["button_home", "button_gallery", "button_games", "button_links"]
-
-    for (i = 0; i < ids.length; i++) {
-        let button = document.getElementById(ids[i]);
-        if (ids[i] == "button_" + page) button.className = "nav_active";
-        else button.className = "nav_inactive";
-    }
+    document.getElementById("hello_text").textContent = messages[index];;
 }
