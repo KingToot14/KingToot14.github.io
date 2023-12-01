@@ -189,7 +189,7 @@ nav ul a.not_current:hover {
 footer {
     background-color: #41115c;
     width: 100%;
-    height: 20px;
+    height: 26px;
     position: fixed;
     left: 0;
     bottom: 0;
@@ -214,6 +214,9 @@ footer {
     z-index: 50;
     position: absolute;
     left:50%;
+
+    width: 100%;
+    text-align: center;
 
     transform: translate(-50%, -24px);
 }
@@ -305,4 +308,34 @@ img.tall {
     gap: 10px;
     grid-auto-rows: auto;
     justify-content: center;
+}
+
+/* Silly Mode */
+#silly_button {
+    position: fixed;
+    left: 10px;
+    bottom: 30px;
+}
+
+#silly_text {
+    position: absolute;
+    font-size: 20px;
+    top: 7px;
+    left: 50%;
+
+    transform: translate(-50%, 0px);
+
+    animation: rainbow_text 8s linear infinite;
+
+    /* background-image: repeating-linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet, red); */
+    background-image: repeating-linear-gradient(to right, red, orange, yellow, green, blue, purple, red);
+    background-size: 2000% 100%;
+    ;;-webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+@keyframes rainbow_text {
+    0%   { background-position: 0 0; }
+    100% { background-position: 100% 0; }
 }

@@ -1,5 +1,6 @@
 window.onload = function() {
     fadeOut();
+    setSillyMode(isSilly());
 };
 
 window.addEventListener('pageshow', function (event) {
@@ -66,26 +67,62 @@ function setGamePage(section) {
 
 
 // My boyfriend worked on this bit
-messages = ["Hello!", "Hello :3", "Haiii", "Yooooo!", ":P", ":3", ":]"];        // Specifically this
-sillyMessages = ["Meowww :P :3 >_<"]                                            // ...and this
+messages = []
+baseMessages = ["Hello!", "Hello :3", "Haiii", "Yooooo!", ":P", ":3", ":]"];            // Specifically this
+sillyMessages = ["Meowww :P :3 >_<", "Massive fucking balls"];                          // ...and this
 prevIndex = 0;
 
-sillyMode = false;
+messages = [].concat(baseMessages);
+
 sillyModeString = "silly";
-currInput = "";
+
+function isSilly() { return sessionStorage.getItem("silly_mode") == "true"; }
+function sillyString() { 
+    str = sessionStorage.getItem("silly_string");
+    if (str == null) return "";
+    return str;
+}
+function setSillyString(val) { sessionStorage.setItem("silly_string", val); } 
 
 document.addEventListener('keypress', function(event) {
-    if (sillyMode) return;
+    if (isSilly()) return;
     
-    if (event.key == sillyModeString[currInput.length]) currInput += event.key;
-    else currInput = "";
+    document.title = sillyString();
+    if (event.key == sillyModeString[sillyString().length]) setSillyString(sillyString() + event.key);
+    else setSillyString("");
 
-    if (currInput.length == 5) activateSillyMode();
+    document.getElementById("silly_text").textContent = sillyString().toUpperCase();
+
+    if (sillyString().length == 5) setSillyMode(true);
 });
 
-function activateSillyMode() {
-    sillyMode = true;
-    messages = messages.concat(sillyMessages);
+function setSillyMode(val) {
+    if (val) {
+        messages = messages.concat(sillyMessages);
+        sessionStorage.setItem("silly_mode", "true");
+    } else {
+        setSillyString("");
+        messages = [].concat(baseMessages);
+        sessionStorage.setItem("silly_mode", "false");
+    }
+
+    loadSillyLabel();
+}
+
+function loadSillyLabel() {
+    document.getElementById("silly_text").textContent = sillyString().toUpperCase();
+    pfp = document.getElementById("home_pfp_normal");
+    pfp_cat = document.getElementById("home_pfp_cat");
+
+    if (isSilly()) {
+        document.getElementById("silly_button").style.display = "block";
+        if (pfp != null) pfp.style.display = "none";
+        if (pfp_cat != null) pfp_cat.style.display = "block";
+    } else {
+        document.getElementById("silly_button").style.display = "none";
+        if (pfp != null) pfp.style.display = "block";
+        if (pfp_cat != null) pfp_cat.style.display = "none";
+    }
 }
 
 function randomizeHelloMessage() {
@@ -93,5 +130,5 @@ function randomizeHelloMessage() {
     if (index >= prevIndex) index += 1;
     prevIndex = index;
 
-    document.getElementById("hello_text").textContent = messages[index];;
+    document.getElementById("hello_text").textContent = messages[index];
 }
